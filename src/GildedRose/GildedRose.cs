@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GildedRose.Factories;
+using System.Collections.Generic;
 
 namespace GildedRoseKata
 {
@@ -12,7 +13,7 @@ namespace GildedRoseKata
         public const int BackstagePassHighQuality = 5; // Days before event.
         public const int BackstagePassMediumQuality = 10; // Days before event.
 
-        IList<Item> Items;
+        private readonly IList<Item> Items;
 
         public GildedRose(IList<Item> Items)
         {
@@ -23,44 +24,14 @@ namespace GildedRoseKata
         {
             foreach (var item in Items)
             {
-                if (item.Name == Sulfuras) continue;
+                // Create the decorated item.
+                var itemDecorated = ItemFactory.CreateItem(item);
 
+                // Update the items quality using the decorator.
+                itemDecorated.UpdateQuality();
+
+                // Decrement the sell in days.
                 item.SellIn--;
-
-                if (item.Name == AgedBrie)
-                {
-                    item.Quality += (item.SellIn < 0 ? 2 : 1);
-                }
-                else if (item.Name == BackstagePass)
-                {
-                    switch (item.SellIn)
-                    {
-                        case < 0:
-                            item.Quality = 0;
-                            break;
-                        case < BackstagePassHighQuality:
-                            item.Quality += 3;
-                            break;
-                        case < BackstagePassMediumQuality:
-                            item.Quality += 2;
-                            break;
-                        default:
-                            item.Quality++;
-                            break;
-                    }
-                }
-                else
-                {
-                    // Normal item.
-                    item.Quality -= (item.SellIn < 0 ? 2 : 1);
-                }
-
-                item.Quality = item.Quality switch
-                {
-                    < 0 => 0,
-                    > 50 => 50,
-                    _ => item.Quality
-                };
             }
         }
     }

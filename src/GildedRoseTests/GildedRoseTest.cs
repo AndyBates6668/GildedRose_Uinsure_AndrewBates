@@ -13,7 +13,7 @@ namespace GildedRoseTests
         [InlineData(1, 25, 26)] // Quality increases by 1.
         public void GildedRose_AgedBrie_Tests(int sellIn, int quality, int expectedQuality)
         {
-            int actualQuality = CreateItemsAndUpdateQuantity(GildedRose.AgedBrie, sellIn, quality);
+            int actualQuality = CreateItemsAndUpdateQuantity(GildedRoseKata.GildedRose.AgedBrie, sellIn, quality);
             Assert.Equal(expectedQuality, actualQuality);
         }
 
@@ -24,7 +24,7 @@ namespace GildedRoseTests
         [InlineData(15, 25, 26)] // Quality increases by 1.
         public void GildedRose_BackstagePass_Tests(int sellIn, int quality, int expectedQuality)
         {
-            int actualQuality = CreateItemsAndUpdateQuantity(GildedRose.BackstagePass, sellIn, quality);
+            int actualQuality = CreateItemsAndUpdateQuantity(GildedRoseKata.GildedRose.BackstagePass, sellIn, quality);
             Assert.Equal(expectedQuality, actualQuality);
         }
 
@@ -32,9 +32,9 @@ namespace GildedRoseTests
         [InlineData(-1, 25, 23)] // Quality decreases by 2.
         [InlineData(0, 25, 23)] // Quality decreases by 2.
         [InlineData(1, 25, 24)] // Quality decreases by 1.
-        public void GildedRose_RegularProduct_Tests(int sellIn, int quality, int expectedQuality)
+        public void GildedRose_NormalItem_Tests(int sellIn, int quality, int expectedQuality)
         {
-            int actualQuality = CreateItemsAndUpdateQuantity("Regular Product", sellIn, quality);
+            int actualQuality = CreateItemsAndUpdateQuantity("Normal Item", sellIn, quality);
             Assert.Equal(expectedQuality, actualQuality);
         }
 
@@ -44,7 +44,7 @@ namespace GildedRoseTests
         [InlineData(1, 80, 80)] // Quality remains same.
         public void GildedRose_Sulfuras_Tests(int sellIn, int quality, int expectedQuality)
         {
-            int actualQuality = CreateItemsAndUpdateQuantity(GildedRose.Sulfuras, sellIn, quality);
+            int actualQuality = CreateItemsAndUpdateQuantity(GildedRoseKata.GildedRose.Sulfuras, sellIn, quality);
             Assert.Equal(expectedQuality, actualQuality);
         }
 
@@ -58,7 +58,7 @@ namespace GildedRoseTests
         private int CreateItemsAndUpdateQuantity(string name, int sellIn, int quality)
         {
             IList<Item> Items = [new Item { Name = name, SellIn = sellIn, Quality = quality }];
-            var app = new GildedRose(Items);
+            var app = new GildedRoseKata.GildedRose(Items);
             app.UpdateQuality();
             return Items[0].Quality;
         }
