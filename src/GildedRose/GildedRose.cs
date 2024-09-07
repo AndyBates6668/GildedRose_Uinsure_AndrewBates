@@ -4,7 +4,13 @@ namespace GildedRoseKata
 {
     public class GildedRose
     {
+        public const string AgedBrie = "Aged Brie";
+        public const string BackstagePass = "Backstage passes to a TAFKAL80ETC concert";
+        public const string Conjured = "Conjured Mana Cake";
+        public const string Sulfuras = "Sulfuras, Hand of Ragnaros";
+
         IList<Item> Items;
+
         public GildedRose(IList<Item> Items)
         {
             this.Items = Items;
