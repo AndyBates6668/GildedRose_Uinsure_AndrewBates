@@ -22,6 +22,8 @@ namespace GildedRoseKata
             {
                 if (item.Name == "Sulfuras, Hand of Ragnaros") continue;
 
+                item.SellIn--;
+
                 if (item.Name == "Aged Brie")
                 {
                     if (item.Quality < 50)
@@ -35,14 +37,14 @@ namespace GildedRoseKata
                     {
                         item.Quality++;
 
-                        if (item.SellIn < 11)
+                        if (item.SellIn < 10)
                         {
                             if (item.Quality < 50)
                             {
                                 item.Quality++;
                             }
 
-                            if (item.SellIn < 6)
+                            if (item.SellIn < 5)
                             {
                                 if (item.Quality < 50)
                                 {
@@ -56,8 +58,6 @@ namespace GildedRoseKata
                 {
                     item.Quality--;
                 }
-
-                item.SellIn--;
 
                 if (item.SellIn < 0)
                 {
