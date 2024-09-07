@@ -46,14 +46,11 @@ namespace GildedRoseKata
                         }
                     }
                 }
-                else
+                else if (item.Quality > 0)
                 {
-                    if (item.Quality > 0)
+                    if (item.Name != "Sulfuras, Hand of Ragnaros")
                     {
-                        if (item.Name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            item.Quality--;
-                        }
+                        item.Quality--;
                     }
                 }
 
@@ -71,21 +68,15 @@ namespace GildedRoseKata
                             item.Quality = item.Quality + 1;
                         }
                     }
-                    else
+                    else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                     {
-                        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                        item.Quality = 0;
+                    }
+                    else if (item.Quality > 0)
+                    {
+                        if (item.Name != "Sulfuras, Hand of Ragnaros")
                         {
-                            item.Quality = 0;
-                        }
-                        else
-                        {
-                            if (item.Quality > 0)
-                            {
-                                if (item.Name != "Sulfuras, Hand of Ragnaros")
-                                {
-                                    item.Quality--;
-                                }
-                            }
+                            item.Quality--;
                         }
                     }
                 }
