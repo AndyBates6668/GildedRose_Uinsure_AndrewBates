@@ -51,8 +51,12 @@ namespace GildedRoseKata
                     item.Quality -= (item.SellIn < 0 ? 2 : 1);
                 }
 
-                if (item.Quality < 0) item.Quality = 0;
-                if (item.Quality > 50) item.Quality = 50;
+                item.Quality = item.Quality switch
+                {
+                    < 0 => 0,
+                    > 50 => 50,
+                    _ => item.Quality
+                };
             }
         }
     }
