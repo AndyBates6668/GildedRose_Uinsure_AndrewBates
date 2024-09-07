@@ -5,7 +5,7 @@ using GildedRoseKata;
 namespace GildedRose.Factories
 {
     /// <summary>
-    /// Factory class to construct specific decorated items for the different product types.
+    /// Factory class to construct specific decorated items for the different items.
     /// </summary>
     public class ItemFactory
     {

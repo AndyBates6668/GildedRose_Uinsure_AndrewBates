@@ -10,7 +10,7 @@ namespace GildedRose.Items
         }
 
         /// <summary>
-        /// Gets the quality adjustment for Aged Brie.
+        /// Gets the quality adjustment for Aged Brie items.
         /// </summary>
         /// <param name="sellIn">Sell in days left.</param>
         /// <returns>Returns 1 if sell in days is greater than 0; otherwise 2.</returns>

@@ -14,7 +14,7 @@ namespace GildedRoseTests
 {
     public class ApprovalTest
     {
-        [Fact(Skip = "Ignore for now to work on coverage of other unit tests.")]
+        [Fact]
         public Task ThirtyDays()
         {
             var fakeoutput = new StringBuilder();

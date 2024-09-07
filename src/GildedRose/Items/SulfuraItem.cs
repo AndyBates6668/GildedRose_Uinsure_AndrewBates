@@ -10,7 +10,7 @@ namespace GildedRose.Items
         }
 
         /// <summary>
-        /// Gets the quality adjustment for Sulfuras.
+        /// Gets the quality adjustment for Sulfuras items.
         /// </summary>
         /// <param name="sellIn">Sell in days left.</param>
         /// <returns>Returns 0 for no adjustment.</returns>

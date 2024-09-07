@@ -10,8 +10,8 @@ namespace GildedRoseKata
         public const string Conjured = "Conjured Mana Cake";
         public const string Sulfuras = "Sulfuras, Hand of Ragnaros";
 
-        public const int BackstagePassHighQuality = 5; // Days before event.
-        public const int BackstagePassMediumQuality = 10; // Days before event.
+        public const int BackstagePassHighIncrease = 5; // Days before event.
+        public const int BackstagePassMediumIncrease = 10; // Days before event.
 
         private readonly IList<Item> Items;
 
