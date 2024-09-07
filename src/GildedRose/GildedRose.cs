@@ -26,44 +26,29 @@ namespace GildedRoseKata
 
                 if (item.Name == "Aged Brie")
                 {
-                    if (item.SellIn < 0)
-                    {
-                        item.Quality += 2;
-                    }
-                    else
-                    {
-                        item.Quality++;
-                    }
+                    item.Quality += (item.SellIn < 0 ? 2 : 1);
                 }
                 else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    if (item.SellIn < 0)
+                    switch (item.SellIn)
                     {
-                        item.Quality = 0;
-                    }
-                    else
-                    {
-                        item.Quality++;
-
-                        if (item.SellIn < 10)
-                        {
+                        case < 0:
+                            item.Quality = 0;
+                            break;
+                        case < 5:
+                            item.Quality += 3;
+                            break;
+                        case < 10:
+                            item.Quality += 2;
+                            break;
+                        default:
                             item.Quality++;
-
-                            if (item.SellIn < 5)
-                            {
-                                item.Quality++;
-                            }
-                        }
+                            break;
                     }
                 }
                 else
                 {
-                    item.Quality--;
-
-                    if (item.SellIn < 0)
-                    {
-                        item.Quality--;
-                    }
+                    item.Quality -= (item.SellIn < 0 ? 2 : 1);
                 }
 
                 if (item.Quality < 0) item.Quality = 0;
