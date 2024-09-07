@@ -26,53 +26,48 @@ namespace GildedRoseKata
 
                 if (item.Name == "Aged Brie")
                 {
-                    if (item.Quality < 50)
+                    if (item.SellIn < 0)
                     {
-                        item.Quality++;
+                        item.Quality += 2;
                     }
-
-                    if (item.SellIn < 0 && item.Quality < 50)
+                    else
                     {
                         item.Quality++;
                     }
                 }
                 else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    if (item.Quality < 50)
+                    if (item.SellIn < 0)
+                    {
+                        item.Quality = 0;
+                    }
+                    else
                     {
                         item.Quality++;
 
                         if (item.SellIn < 10)
                         {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality++;
-                            }
+                            item.Quality++;
 
                             if (item.SellIn < 5)
                             {
-                                if (item.Quality < 50)
-                                {
-                                    item.Quality++;
-                                }
+                                item.Quality++;
                             }
                         }
                     }
-
-                    if (item.SellIn < 0)
-                    {
-                        item.Quality = 0;
-                    }
                 }
-                else if (item.Quality > 0)
+                else
                 {
                     item.Quality--;
 
-                    if (item.SellIn < 0 && item.Quality > 0)
+                    if (item.SellIn < 0)
                     {
                         item.Quality--;
                     }
                 }
+
+                if (item.Quality < 0) item.Quality = 0;
+                if (item.Quality > 50) item.Quality = 50;
             }
         }
     }
