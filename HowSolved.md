@@ -21,5 +21,6 @@
 ![alt text](UpdateQualityCodeCoverage.png "UpdateQuality Code Coverage.")
 
 2. Refactor UpdateQuality method. `Done; condition is clearer and matches requirements.`
-3. Create decorator items and factory. Update quality in decorated items.
-4. Add new Conjured item and update tests.
+3. Create decorator items and factory. Update quality in decorated items. `Done`
+4. Add new Conjured item and update tests. `Done`
+5. Final quality check.

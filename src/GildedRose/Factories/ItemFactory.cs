@@ -22,6 +22,8 @@ namespace GildedRose.Factories
                     return new AgedBrieItem(item);
                 case GildedRoseKata.GildedRose.BackstagePass:
                     return new BackstagePassItem(item);
+                case GildedRoseKata.GildedRose.Conjured:
+                    return new ConjuredItem(item);
                 case GildedRoseKata.GildedRose.Sulfuras:
                     return new SulfuraItem(item);
                 default:

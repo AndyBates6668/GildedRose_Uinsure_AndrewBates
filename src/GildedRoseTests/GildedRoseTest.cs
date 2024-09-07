@@ -29,6 +29,16 @@ namespace GildedRoseTests
         }
 
         [Theory]
+        [InlineData(-1, 25, 21)] // Quality decreases by 4.
+        [InlineData(0, 25, 21)] // Quality decreases by 4.
+        [InlineData(1, 25, 23)] // Quality decreases by 2.
+        public void GildedRose_ConjuredItem_Tests(int sellIn, int quality, int expectedQuality)
+        {
+            int actualQuality = CreateItemsAndUpdateQuantity(GildedRoseKata.GildedRose.Conjured, sellIn, quality);
+            Assert.Equal(expectedQuality, actualQuality);
+        }
+
+        [Theory]
         [InlineData(-1, 25, 23)] // Quality decreases by 2.
         [InlineData(0, 25, 23)] // Quality decreases by 2.
         [InlineData(1, 25, 24)] // Quality decreases by 1.
