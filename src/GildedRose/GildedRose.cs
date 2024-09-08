@@ -1,5 +1,6 @@
 ﻿using GildedRose.Factories;
 using System.Collections.Generic;
+using GildedRose.Interfaces;
 
 namespace GildedRoseKata
 {
@@ -27,8 +28,11 @@ namespace GildedRoseKata
                 // Create the decorated item.
                 var itemDecorated = ItemFactory.CreateItem(item);
 
-                // Update the items quality using the decorator.
-                itemDecorated.UpdateQuality();
+                if (itemDecorated is IItemUpdatable itemUpdatable)
+                {
+                    // Update the items quality.
+                    itemUpdatable.UpdateQuality();
+                }
 
                 // Decrement the sell in days.
                 item.SellIn--;

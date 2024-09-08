@@ -23,4 +23,13 @@
 2. Refactor UpdateQuality method. `Done; condition is clearer and matches requirements.`
 3. Create decorator items and factory. Update quality in decorated items. `Done`
 4. Add new Conjured item and update tests. `Done`
-5. Final quality check and tweaks. `Done`
+5. Added interfaces and an updatable class to separate the items that can be updated. Added interfaces. `Done`
+6. Final quality check and tweaks. `Done`
+
+One note is that the requirements are not clear on whether the Sulfuras sell in should be reduced. I deduce that it should but can easily amend should that not be the case. See requirements:
+
+- All `items` have a `SellIn` value which denotes the number of days we have to sell the `items`
+- All `items` have a `Quality` value which denotes how valuable the item is
+- At the end of each day our system lowers both values for **every** item
+
+- __"Sulfuras"__, being a legendary item, never has to be sold or decreases in `Quality`

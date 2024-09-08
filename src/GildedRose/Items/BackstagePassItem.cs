@@ -1,9 +1,8 @@
-﻿using GildedRose.Decorators;
-using GildedRoseKata;
+﻿using GildedRoseKata;
 
 namespace GildedRose.Items
 {
-    public class BackstagePassItem : ItemDecorator
+    public class BackstagePassItem : ItemUpdatable
     {
         public BackstagePassItem(Item item) : base(item)
         {

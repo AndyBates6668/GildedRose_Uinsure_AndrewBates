@@ -1,9 +1,8 @@
-﻿using GildedRose.Decorators;
-using GildedRoseKata;
+﻿using GildedRoseKata;
 
 namespace GildedRose.Items
 {
-    public class NormalItem : ItemDecorator
+    public class NormalItem : ItemUpdatable
     {
         public NormalItem(Item item) : base(item)
         {

@@ -1,9 +1,8 @@
-﻿using GildedRose.Decorators;
-using GildedRoseKata;
+﻿using GildedRoseKata;
 
 namespace GildedRose.Items
 {
-    public class ConjuredItem : ItemDecorator
+    public class ConjuredItem : ItemUpdatable
     {
         public ConjuredItem(Item item) : base(item)
         {

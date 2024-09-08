@@ -1,9 +1,8 @@
-﻿using GildedRose.Decorators;
-using GildedRoseKata;
+﻿using GildedRoseKata;
 
 namespace GildedRose.Items
 {
-    public class AgedBrieItem : ItemDecorator
+    public class AgedBrieItem : ItemUpdatable
     {
         public AgedBrieItem(Item item) : base(item)
         {
