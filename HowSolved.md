@@ -24,6 +24,9 @@
 3. Create decorator items and factory. Update quality in decorated items. `Done`
 4. Add new Conjured item and update tests. `Done`
 5. Added interfaces and an updatable class to separate the items that can be updated. Added interfaces. `Done`
+
+![alt text](ClassDiagram.png "Class Diagram.")
+
 6. Final quality check and tweaks. `Done`
 
 One note is that the requirements are not clear on whether the Sulfuras sell in should be reduced. I deduce that it should but can easily amend should that not be the case. See requirements:
